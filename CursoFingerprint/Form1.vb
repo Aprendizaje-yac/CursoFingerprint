@@ -43,6 +43,9 @@ Public Class Form1
     End Sub
 
     Public Sub OnComplete(Capture As Object, ReaderSerialNumber As String, Sample As Sample) Implements EventHandler.OnComplete
+        MessageBox.Show("entre al complete")
+        ponerImagen(ConvertirSampleMapadebit(Sample))
+
     End Sub
 
     Public Sub OnFingerGone(Capture As Object, ReaderSerialNumber As String) Implements EventHandler.OnFingerGone
@@ -75,4 +78,20 @@ Public Class Form1
         paraCaptura()
 
     End Sub
+
+    Protected Function ConvertirSampleMapadebit(ByVal Sample As DPFP.Sample) As Bitmap
+        Dim convertidor As New DPFP.Capture.SampleConversion() ' es una variable del tipo conversor de un dpfp.Sample
+        Dim mapaBits As Bitmap = Nothing ' Imagen vacia por defecto
+
+        convertidor.ConvertToPicture(Sample, mapaBits)
+        Return mapaBits
+
+    End Function
+
+    Private Sub ponerImagen(ByVal bmp)
+        'pb_ImagenHuella es un componente de pictureBox, para ponerlo aca la imagen
+        pb_ImagenHuella.Image = bmp
+
+    End Sub
+
 End Class

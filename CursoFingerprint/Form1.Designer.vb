@@ -22,17 +22,30 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.pb_ImagenHuella = New System.Windows.Forms.PictureBox()
+        CType(Me.pb_ImagenHuella, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'pb_ImagenHuella
+        '
+        Me.pb_ImagenHuella.Location = New System.Drawing.Point(69, 31)
+        Me.pb_ImagenHuella.Name = "pb_ImagenHuella"
+        Me.pb_ImagenHuella.Size = New System.Drawing.Size(449, 300)
+        Me.pb_ImagenHuella.TabIndex = 0
+        Me.pb_ImagenHuella.TabStop = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.ClientSize = New System.Drawing.Size(587, 343)
+        Me.Controls.Add(Me.pb_ImagenHuella)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.pb_ImagenHuella, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents pb_ImagenHuella As PictureBox
 End Class
