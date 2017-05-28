@@ -49,7 +49,8 @@ Public Class Form1
     End Sub
 
     Public Sub OnFingerTouch(Capture As Object, ReaderSerialNumber As String) Implements EventHandler.OnFingerTouch
-        MessageBox.Show("aprete el aparato")
+        ''' Funcion que esucha el evento del toque del biometrico
+        MessageBox.Show("Aprete el biometrico")
 
     End Sub
 
@@ -63,12 +64,14 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ''' Iniciando las funciones para el evento del biometrico
         Init()
         iniciarCaptura()
 
     End Sub
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        '''Detiene el evento de escucha del biometrico
         paraCaptura()
 
     End Sub
